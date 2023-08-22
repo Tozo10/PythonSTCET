@@ -1,5 +1,5 @@
 s = float (input ("Enter the score : "))
-if not s < 1.0 and s > 0.0 :
+if not (s > 1.0 and s < 0.0) :
     if s >= 0.9 :
         print("A")
     elif s >= 0.8 and s < 0.9 :
