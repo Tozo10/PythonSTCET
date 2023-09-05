@@ -1,0 +1,2 @@
+Create two lists. Append an item. Append a tuple of length two. Concatenate two lists. Find an index of an item. Insert 'six' at 
+index 5. Delete last item. Delete item with index 4. Remove an item 'six'. Reverse the list and sort it. Print the results at each step.
