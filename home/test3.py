@@ -1,5 +1,2 @@
-a = 1
-def do(x):
-    a = 100
-    return(x+a)
-print(do(1))
+a = ['s','a','y']
+print(a)
