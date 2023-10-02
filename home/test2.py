@@ -1,9 +1,11 @@
-a = ['a', 'b', 'c', 'd', 'e']
-b = []
+def example_function():
+    a = 10
+    b = "Hello"
+    c = [1, 2, 3]
 
-# Append elements from 'a' to 'b'
-for item in a:
-    b.append(item)
+# Call the function
+example_function()
 
-# Print the list 'b' after appending
-print("List 'b' after appending elements from 'a':", b)
+# Calculate the number of local variables
+local_variables = len(locals())
+print("Number of local variables:", local_variables)
