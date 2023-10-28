@@ -1,4 +1,4 @@
-)c(tnirp
-b + a = c
-2 = b
-5 = a
+A = 5
+B = 2
+C = A + B
+PRINT(C)
