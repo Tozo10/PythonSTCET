@@ -1,0 +1,22 @@
+1) Listener program. - tracks I/O devices. Active as long as machine is ON. Monitors entire coordinate area. 
+Works on ECA model - (Event Condition Action)- event - click cond - clicked on words so words have to open words. - action - open the app
+
+2)GUI  vs CLI
+
+3) GUI - generate layout -> incorporate OS -> listener-> object -> write underlying program
+
+4) Buttons/ command buttons - data provided , just click on it for some actions.
+
+5) output should be done in labels as we do not want to change the o/p. Txt box - txt can be changed, labels are constant
+
+6) radio button - Use frames(as helps in making group) before making
+
+7) list box- disadvant. - Large list need to scroll down and use a lot of space so use combo boxes(drop down list box). Combo - list box + txt box. 
+          ex - message box, input box.
+
+prac - l1 - Enter 1 number
+          l2 - Enter  2 number
+          ADD  SUB  END
+
+
+last - basic obj, member, code, ss of O/P
