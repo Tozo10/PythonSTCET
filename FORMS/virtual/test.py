@@ -138,15 +138,16 @@ def filter_data(*args):
                                            row['Email id'], row['Gender'], row['Religion'],row["Caste"],
                                            row['Department'], row['Year'], row['Semester'],row["Terms Accepted"]),tags=(my_tag))
 
-def refresh(my_tag):
-    data= pd.read_excel(path)
+def refresh(my_tag=None):
+    data = pd.read_excel(path)
     treeview.delete(*treeview.get_children())
-    for index , row in data.iterrows():
-        my_tag = 'oddrow' if my_tag=='evenrow'else 'evenrow'
-        treeview.insert("", "end", values=(row ['Unique id'],row['First Name'], row['Last Name'], row['Title'],row["Guardian's Name"],
-                                           row['Age'], row['Date of Birth'], row['Address'],row["Mobile No."],
-                                           row['Email id'], row['Gender'], row['Religion'],row["Caste"],
-                                           row['Department'], row['Year'], row['Semester'],row["Terms Accepted"]),tags=(my_tag))
+    for index, row in data.iterrows():
+        my_tag = 'oddrow' if my_tag == 'evenrow' else 'evenrow'
+        treeview.insert("", "end", values=(row['Unique id'], row['First Name'], row['Last Name'], row['Title'],
+                                           row["Guardian's Name"], row['Age'], row['Date of Birth'], row['Address'],
+                                           row["Mobile No."], row['Email id'], row['Gender'], row['Religion'],
+                                           row["Caste"], row['Department'], row['Year'], row['Semester'],
+                                           row["Terms Accepted"]), tags=(my_tag))
     update_bar1()
     update_bar2()
         
@@ -303,7 +304,7 @@ def remove_row():
         else:
             treeview.delete(item)
             data.to_excel(path,index=False)
-    refresh(my_tag)
+    refresh('oddrow' if my_tag == 'evenrow' else 'evenrow')
     
 
 remove_rows_button = ctk.CTkButton(button_frame, text="Remove One or More", command=remove_row,fg_color="#264D61",hover_color="#2F5E87",height = 30,corner_radius = 15)

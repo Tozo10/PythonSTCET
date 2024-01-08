@@ -96,41 +96,43 @@ class GeneratedForm(ctk.CTkToplevel):
         if not all([first_name, last_name, title_value, guardian_name, age_value, dob_value, address_value, mobile_value, email_value, gender_value, religion_value, caste_value, dept_value, year_value, sem_value, terms_accepted]):
             tkinter.messagebox.showerror('Error', 'Please fill all the fields')
             return
+        confirm = tkinter.messagebox.askyesno("Confirmation", "Do you want to submit the form?")
+        if confirm :
 
     # Create a dictionary with the collected data
-        data = {
-            "Unique id":[unique_id],
-            "First Name": [first_name],
-            "Last Name": [last_name],
-            "Title": [title_value],
-            "Guardian's Name": [guardian_name],
-            "Age": [age_value],
-            "Date of Birth": [dob_value],
-            "Address": [address_value],
-            "Mobile No.": [mobile_value],
-            "Email id": [email_value],
-            "Gender": [gender_value],
-            "Religion": [religion_value],
-            "Caste": [caste_value],
-            "Department": [dept_value],
-            "Year": [year_value],
-            "Semester": [sem_value],
-            "Terms Accepted": [terms_accepted],
-            }
+            data = {
+                "Unique id":[unique_id],
+                "First Name": [first_name],
+                "Last Name": [last_name],
+                "Title": [title_value],
+                "Guardian's Name": [guardian_name],
+                "Age": [age_value],
+                "Date of Birth": [dob_value],
+                "Address": [address_value],
+                "Mobile No.": [mobile_value],
+                "Email id": [email_value],
+                "Gender": [gender_value],
+                "Religion": [religion_value],
+                "Caste": [caste_value],
+                "Department": [dept_value],
+                "Year": [year_value],
+                "Semester": [sem_value],
+                "Terms Accepted": [terms_accepted],
+                }
 
 
-    # Create a DataFrame from the dictionary
-        df = pd.DataFrame(data)
+        # Create a DataFrame from the dictionary
+            df = pd.DataFrame(data)
 
-    # Save the DataFrame to an Excel file
-        try:
-                existing_df = pd.read_excel('students.xlsx')
-                new_df = pd.concat([existing_df, df], ignore_index=True)
-        except FileNotFoundError:
-                new_df = df
-        new_df.to_excel('students.xlsx', index=False)
-        self.reset_action()   
-        tkinter.messagebox.showinfo('Success',f"Student information saved successfully , Unique id :{unique_id}")
+        # Save the DataFrame to an Excel file
+            try:
+                    existing_df = pd.read_excel('students.xlsx')
+                    new_df = pd.concat([existing_df, df], ignore_index=True)
+            except FileNotFoundError:
+                    new_df = df
+            new_df.to_excel('students.xlsx', index=False)
+            self.reset_action()   
+            tkinter.messagebox.showinfo('Success',f"Student information saved successfully , Unique id :{unique_id}")
     
 
 
